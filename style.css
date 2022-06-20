@@ -418,19 +418,18 @@ h2 {
     grid-template-columns: 100%;
     grid-template-rows: repeat(3, 1fr);
     row-gap: 0;
-    justify-items: start;
+    justify-items: center;
     padding: 0;
   }
 
   .logo {
     grid-row: 1;
     height: 3.5rem;
-    justify-self: center;
   }
 
   .login {
     grid-row: 2;
-    margin-top: 0.6rem;
+    margin-top: 1rem;
   }
 
   .login__input {
@@ -440,7 +439,7 @@ h2 {
 
   .welcome {
     grid-row: 3;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     margin-top: 0.6rem;
   }
 
