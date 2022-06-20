@@ -418,28 +418,36 @@ h2 {
     grid-template-columns: 100%;
     grid-template-rows: repeat(3, 1fr);
     row-gap: 0;
-    justify-items: center;
+    justify-items: start;
     padding: 0;
   }
 
   .logo {
     grid-row: 1;
     height: 3.5rem;
-    /* justify-self: center; */
+    justify-self: center;
   }
 
   .login {
-    grid-row: 3;
-    justify-self: end;
-    margin-top: 1rem;
+    grid-row: 2;
+    margin-top: 0.6rem;
+  }
+
+  .login__input {
+    padding: 0 0.3rem;
+    width: 8rem;
   }
 
   .welcome {
-    grid-row: 2;
+    grid-row: 3;
     font-size: 1.3rem;
+    margin-top: 0.6rem;
   }
 
   .balance__value {
     font-size: 2.5rem;
   }
 }
+
+/* @media (max-width: 320px) {
+} */
