@@ -456,7 +456,7 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 33%);
     grid-template-rows: repeat(3, 1fr);
-    width: 93vw;
+    width: 90vw;
     margin: 0.5rem;
   }
 
@@ -480,20 +480,28 @@ h2 {
 
   .operation--transfer {
     grid-row-start: 6;
+    background-image: linear-gradient(to top left, #fecb5e, #756113);
   }
 
   .operation--loan {
     grid-row-start: 7;
+    background-image: linear-gradient(to top left, #85f1ca, #3e5729);
   }
 
   .operation--close {
     grid-row-start: 8;
+    background-image: linear-gradient(to top left, #fc7e84, #872a41);
   }
 
   .logout-timer {
     grid-row-start: 9;
     grid-column-start: 1 / span 2;
     align-self: end;
+  }
+
+  .log-out {
+    box-shadow: 0.2rem 0.3rem 5px rgb(43, 31, 31);
+    background-image: linear-gradient(to top left, #cb6166, #cf2525);
   }
 }
 
