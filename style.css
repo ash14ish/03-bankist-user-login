@@ -358,7 +358,7 @@ h2 {
   }
 
   .app {
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 100%);
     grid-template-rows: auto repeat(3, 15rem) repeat(3, auto);
   }
 
@@ -444,6 +444,10 @@ h2 {
     font-size: 2rem;
   }
 
+  .app {
+    grid-template-rows: auto repeat(3, 15rem) repeat(5, auto);
+  }
+
   .movements {
     width: 95vw;
   }
@@ -452,7 +456,8 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 33%);
     grid-template-rows: repeat(3, 1fr);
-    width: 95vw;
+    width: 93vw;
+    margin: 0.5rem;
   }
 
   .summary__label {
@@ -467,6 +472,28 @@ h2 {
     grid-row: 2;
     grid-column: 3;
     place-self: center;
+  }
+
+  .operation {
+    margin: auto 1rem;
+  }
+
+  .operation--transfer {
+    grid-row-start: 6;
+  }
+
+  .operation--loan {
+    grid-row-start: 7;
+  }
+
+  .operation--close {
+    grid-row-start: 8;
+  }
+
+  .logout-timer {
+    grid-row-start: 9;
+    grid-column-start: 1 / span 2;
+    align-self: end;
   }
 }
 
