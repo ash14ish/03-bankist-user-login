@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
@@ -407,12 +407,18 @@ h2 {
 }
 
 @media (max-width: 670px) {
+  body {
+    margin: 0;
+    padding: 0.2rem 1.2rem;
+  }
   nav {
+    margin-top: 0;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: repeat(3, 1fr);
     row-gap: 0;
     justify-items: center;
+    padding: 0;
   }
 
   .logo {
@@ -423,13 +429,13 @@ h2 {
 
   .login {
     grid-row: 3;
-    /* justify-self: start; */
+    justify-self: center;
+    margin-top: 1rem;
   }
 
   .welcome {
     grid-row: 2;
     font-size: 1.3rem;
-    /* justify-self: start; */
   }
 
   .balance__value {
