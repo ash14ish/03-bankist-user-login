@@ -7,9 +7,13 @@
 // Data
 const account1 = {
   owner: "Ashish Sharma Mamgain",
+
   movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+
   interestRate: 1.2, // %
+
   pin: 1111,
+
   movementsDates: [
     "2019-11-01T13:15:33.035Z",
     "2019-11-30T09:48:16.867Z",
@@ -17,18 +21,23 @@ const account1 = {
     "2020-01-25T14:18:46.235Z",
     "2020-02-05T16:33:06.386Z",
     "2020-04-10T14:43:26.374Z",
-    "2022-03-08T18:49:59.371Z",
     "2022-03-06T12:01:20.894Z",
+    "2022-03-08T18:49:59.371Z",
   ],
+
   currency: "INR",
   locale: "hi-IN",
 };
 
 const account2 = {
   owner: "Ravneet Kaur Bagga",
+
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+
   interestRate: 1.5,
+
   pin: 2222,
+
   movementsDates: [
     "2019-11-18T21:31:17.178Z",
     "2019-12-23T07:42:02.383Z",
@@ -39,15 +48,21 @@ const account2 = {
     "2020-07-11T23:36:17.929Z",
     "2020-07-12T10:51:36.790Z",
   ],
+
   currency: "USD",
+
   locale: "en-US",
 };
 
 const account3 = {
   owner: "Ankita Mamgain",
+
   movements: [200, -200, 340, -300, -20, 50, 400, -460],
+
   interestRate: 0.7,
+
   pin: 3333,
+
   movementsDates: [
     "2019-11-01T13:15:33.035Z",
     "2019-11-30T09:48:16.867Z",
@@ -58,15 +73,21 @@ const account3 = {
     "2020-06-25T18:49:59.371Z",
     "2020-07-26T12:01:20.894Z",
   ],
+
   currency: "INR",
+
   locale: "en-US",
 };
 
 const account4 = {
   owner: "Jasmeet Singh Bagga",
+
   movements: [430, 1000, 700, 50, 90],
+
   interestRate: 1,
+
   pin: 4444,
+
   movementsDates: [
     "2019-11-18T21:31:17.178Z",
     "2019-12-23T07:42:02.383Z",
@@ -74,7 +95,9 @@ const account4 = {
     "2020-04-01T10:17:24.185Z",
     "2020-05-08T14:11:59.604Z",
   ],
+
   currency: "INR",
+
   locale: "hi-IN",
 };
 
@@ -265,6 +288,7 @@ btnLogin.addEventListener("click", function (e) {
 
     inputLoginPin.value = inputLoginUsername.value = "";
     inputLoginUsername.blur();
+    inputLoginPin.blur();
 
     // display welcome message and UI
     labelWelcome.textContent = `Welcome ${currAcc.owner.split(" ")[0]}`;
@@ -290,6 +314,7 @@ btnLogin.addEventListener("click", function (e) {
       minute: "numeric",
       second: "numeric",
     };
+
     labelDate.textContent = new Intl.DateTimeFormat(
       currAcc.locale,
       options
@@ -377,3 +402,6 @@ btnLogOut.addEventListener("click", function () {
   containerApp.style.opacity = "0";
   document.body.scrollIntoView({ behavior: "smooth" });
 });
+
+updateUI(account1);
+containerApp.style.opacity = "100";

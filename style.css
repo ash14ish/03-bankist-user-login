@@ -9,6 +9,24 @@ html {
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(30, 30, 30);
+}
+
 body {
   font-family: "Poppins", sans-serif;
   color: #444;
@@ -78,6 +96,7 @@ nav {
 }
 
 /* MAIN */
+
 .app {
   position: relative;
   max-width: 100rem;
@@ -117,6 +136,7 @@ nav {
 }
 
 /* MOVEMENTS */
+
 .movements {
   grid-row: 2 / span 3;
   background-color: #fff;
@@ -162,6 +182,7 @@ nav {
 }
 
 /* SUMMARY */
+
 .summary {
   grid-row: 5 / 6;
   display: flex;
@@ -201,6 +222,7 @@ nav {
 }
 
 /* OPERATIONS */
+
 .operation {
   border-radius: 1rem;
   padding: 3rem 4rem;
@@ -234,6 +256,7 @@ h2 {
 }
 
 /* Exceptions for interst */
+
 .form.form--loan {
   grid-template-columns: 2.5fr 1fr 2.5fr;
 }
@@ -311,3 +334,25 @@ h2 {
   cursor: pointer;
   transition: all 0.3s;
 }
+
+@media (max-width: 950px) {
+  .logout-timer {
+    text-align: left;
+  }
+}
+
+@media (max-width: 900px) {
+  .log-out {
+    width: 30%;
+  }
+}
+
+@media (max-width: 880px) {
+  .logout-timer {
+    text-align: center;
+  }
+
+  .log-out {
+    margin-top: 1.4rem;
+  }
+} ;
