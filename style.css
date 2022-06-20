@@ -411,6 +411,7 @@ h2 {
     margin: 0;
     padding: 0.2rem 1.2rem;
   }
+
   nav {
     margin-top: 0;
     display: grid;
@@ -429,7 +430,7 @@ h2 {
 
   .login {
     grid-row: 3;
-    justify-self: center;
+    justify-self: end;
     margin-top: 1rem;
   }
 
