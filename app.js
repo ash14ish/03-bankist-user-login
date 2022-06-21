@@ -130,6 +130,9 @@ const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
+const modalCloseButton = document.querySelector(".close-modal");
+const overlay = document.querySelector(".overlay");
+
 const currencies = new Map([
   ["USD", "United States dollar"],
   ["EUR", "Euro"],
