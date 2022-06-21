@@ -505,8 +505,7 @@ h2 {
   .log-out {
     box-shadow: 0.2rem 0.3rem 5px rgb(43, 31, 31);
     margin-bottom: 2rem;
-    background-image: linear-gradient(to top left, #cb6166, #cf2525);
-    background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+    background-image: linear-gradient(to top left, #e0355f, #cb6166, #ff585f);
   }
 }
 
