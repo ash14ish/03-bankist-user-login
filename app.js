@@ -301,10 +301,12 @@ btnLogin.addEventListener("click", function (e) {
 
   if (!currAcc) {
     modalToggleHandler("User doesn't exist");
+    modalMessage.style.color = "#f5465d";
   }
 
   if (currAcc && currAcc.pin !== +inputLoginPin.value) {
     modalToggleHandler("Incorrect Password");
+    modalMessage.style.color = "#f5465d";
   }
 
   if (currAcc?.pin === +inputLoginPin.value) {
@@ -418,7 +420,12 @@ btnClose.addEventListener("click", function (e) {
     curr => curr.userName === inputCloseUsername.value
   );
 
-  if (currAcc?.pin === +inputClosePin.value) {
+  if (!delAcc || currAcc.pin !== +inputClosePin.value) {
+    modalToggleHandler("Wrong Credentials ❌");
+    modalMessage.style.color = "#f5465d";
+  }
+
+  if (delAcc && currAcc?.pin === +inputClosePin.value) {
     accounts.splice(
       accounts.findIndex(curr => curr === delAcc),
       1
@@ -426,11 +433,9 @@ btnClose.addEventListener("click", function (e) {
     // Hide UI
     containerApp.style.opacity = "0";
 
-    modalToggleHandler("Account Deleted ❌");
+    modalToggleHandler("Account Deleted");
     modalMessage.style.color = "#f5465d";
-  } else {
-    modalToggleHandler("Wrong Credentials ❌");
-    modalMessage.style.color = "#f5465d";
+    document.body.scrollIntoView({ behavior: "smooth" });
   }
 });
 

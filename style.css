@@ -364,11 +364,6 @@ h2 {
 
 .message {
   align-self: center;
-  color: rgb(137, 136, 136);
-}
-
-.hidden {
-  display: none;
 }
 
 .close-modal {
@@ -379,6 +374,10 @@ h2 {
   padding: 0.4rem 2rem;
   background-color: rgb(179, 234, 179);
   box-shadow: 0.2rem 0.3rem 4px rgb(56, 55, 55);
+}
+
+.hidden {
+  display: none;
 }
 
 @media (max-width: 950px) {
@@ -573,6 +572,11 @@ h2 {
     top: 30%;
     left: 13%;
     width: 74%;
+  }
+
+  .close-modal {
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 }
 
