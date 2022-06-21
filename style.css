@@ -547,6 +547,12 @@ h2 {
     margin-bottom: 2rem;
     background-image: linear-gradient(to top left, #e0355f, #cb6166, #ff585f);
   }
+
+  .modal {
+    top: 30%;
+    left: 18%;
+    width: 64%;
+  }
 }
 
 @media (max-width: 480px) {
