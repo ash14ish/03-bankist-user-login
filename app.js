@@ -423,6 +423,7 @@ btnClose.addEventListener("click", function (e) {
   if (!delAcc || currAcc.pin !== +inputClosePin.value) {
     modalToggleHandler("Wrong Credentials ❌");
     modalMessage.style.color = "#f5465d";
+    inputClosePin.value = inputCloseUsername.value = "";
   }
 
   if (delAcc && currAcc?.pin === +inputClosePin.value) {
