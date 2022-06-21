@@ -507,8 +507,9 @@ h2 {
 }
 
 @media (max-width: 480px) {
-  /* .movements__row {
-  } */
+  .movements__row {
+    padding: 2.25rem;
+  }
 }
 
 @media (max-width: 320px) {
