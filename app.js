@@ -432,8 +432,9 @@ btnClose.addEventListener("click", function (e) {
       1
     );
     // Hide UI
-    document.body.scrollIntoView({ behavior: "smooth" });
+    labelWelcome.textContent = "Log in to get started";
     containerApp.style.opacity = "0";
+    document.body.scrollIntoView({ behavior: "smooth" });
 
     modalToggleHandler("Account Deleted");
     modalMessage.style.color = "#f5465d";
