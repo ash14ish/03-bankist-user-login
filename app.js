@@ -302,11 +302,13 @@ btnLogin.addEventListener("click", function (e) {
   if (!currAcc) {
     modalToggleHandler("User doesn't exist");
     modalMessage.style.color = "#f5465d";
+    inputLoginUsername.focus();
   }
 
   if (currAcc && currAcc.pin !== +inputLoginPin.value) {
     modalToggleHandler("Incorrect Password");
     modalMessage.style.color = "#f5465d";
+    inputLoginPin.focus();
   }
 
   if (currAcc?.pin === +inputLoginPin.value) {
@@ -394,15 +396,15 @@ btnLoan.addEventListener("click", function (e) {
     currAcc.movements.push(loan);
     currAcc.movementsDates.push(new Date());
     setTimeout(() => {
-      updateUI(currAcc);
       modalToggleHandler("Loan Approved ✔");
       modalMessage.style.color = "#66c873";
+      updateUI(currAcc);
     }, 1000);
   } else {
     setTimeout(() => {
-      updateUI(currAcc);
       modalToggleHandler("Loan Disapproved ❌");
       modalMessage.style.color = "#f5465d";
+      updateUI(currAcc);
     }, 1000);
   }
 
@@ -444,6 +446,7 @@ btnClose.addEventListener("click", function (e) {
 // 5) Sorting
 
 let sorting = false;
+
 btnSort.addEventListener("click", function () {
   dispMov(currAcc, !sorting);
   sorting = !sorting;
