@@ -432,11 +432,11 @@ btnClose.addEventListener("click", function (e) {
       1
     );
     // Hide UI
+    document.body.scrollIntoView({ behavior: "smooth" });
     containerApp.style.opacity = "0";
 
     modalToggleHandler("Account Deleted");
     modalMessage.style.color = "#f5465d";
-    document.body.scrollIntoView({ behavior: "smooth" });
   }
 });
 
