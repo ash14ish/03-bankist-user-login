@@ -568,6 +568,12 @@ h2 {
   .movements__row {
     padding: 2.25rem;
   }
+
+  .modal {
+    top: 30%;
+    left: 13%;
+    width: 74%;
+  }
 }
 
 @media (max-width: 320px) {

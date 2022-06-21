@@ -315,11 +315,12 @@ btnLogin.addEventListener("click", function (e) {
     inputLoginPin.blur();
 
     // display welcome message and UI
+
     labelWelcome.textContent = `Welcome ${currAcc.owner.split(" ")[0]}`;
     containerApp.style.opacity = "100";
-    // document.querySelector('.hideActive').textContent = '🟢';
 
     // countdown timer
+
     if (timer) clearInterval(timer);
     timer = logOutTimer();
 
@@ -365,11 +366,16 @@ btnTransfer.addEventListener("click", function (e) {
     currAcc.balance >= transferAmount &&
     reciever?.userName !== currAcc.userName
   ) {
+    modalToggleHandler("Transfer Succesful ✔");
+    modalMessage.style.color = "#66c873";
     currAcc.movements.push(-transferAmount);
     reciever.movements.push(transferAmount);
     currAcc.movementsDates.push(new Date());
     reciever.movementsDates.push(new Date());
     updateUI(currAcc);
+  } else {
+    modalToggleHandler("Transfer Failed ❌");
+    modalMessage.style.color = "#f5465d";
   }
 
   // Reset timer
@@ -385,8 +391,19 @@ btnLoan.addEventListener("click", function (e) {
   if (loan > 0 && currAcc.movements.some(mov => mov > 0 && mov >= 0.1 * loan)) {
     currAcc.movements.push(loan);
     currAcc.movementsDates.push(new Date());
-    setTimeout(() => updateUI(currAcc), 1000);
+    setTimeout(() => {
+      updateUI(currAcc);
+      modalToggleHandler("Loan Approved ✔");
+      modalMessage.style.color = "#66c873";
+    }, 1000);
+  } else {
+    setTimeout(() => {
+      updateUI(currAcc);
+      modalToggleHandler("Loan Disapproved ❌");
+      modalMessage.style.color = "#f5465d";
+    }, 1000);
   }
+
   // Reset timer
   clearInterval(timer);
   timer = logOutTimer();
@@ -408,6 +425,12 @@ btnClose.addEventListener("click", function (e) {
     );
     // Hide UI
     containerApp.style.opacity = "0";
+
+    modalToggleHandler("Account Deleted ❌");
+    modalMessage.style.color = "#f5465d";
+  } else {
+    modalToggleHandler("Wrong Credentials ❌");
+    modalMessage.style.color = "#f5465d";
   }
 });
 
