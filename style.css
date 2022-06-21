@@ -455,8 +455,6 @@ h2 {
   .movements {
     background-image: linear-gradient(to top left, #ffffff, #9d9d9d);
   }
-  /* .movements__row {
-  } */
 
   .summary {
     width: 90vw;
@@ -506,6 +504,11 @@ h2 {
     box-shadow: 0.2rem 0.3rem 5px rgb(43, 31, 31);
     background-image: linear-gradient(to top left, #cb6166, #cf2525);
   }
+}
+
+@media (max-width: 480px) {
+  /* .movements__row {
+  } */
 }
 
 @media (max-width: 320px) {

@@ -179,7 +179,9 @@ const dispMov = function (acc, sort = false) {
     let foNu = formtNumb(mov.toFixed(2), acc);
 
     const html = `<div class="movements__row">
-    <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+    <div class="movements__type movements__type--${type}">${i + 1} ${
+      type === `deposit` ? "dep" : "wdl"
+    }</div>
       <div class="movements__date">${dispDate}
       </div>
     <div class="movements__value">${foNu}</div>
