@@ -445,6 +445,7 @@ h2 {
 
   .balance__value {
     font-size: 2rem;
+    font-weight: bold;
   }
 
   .app {
