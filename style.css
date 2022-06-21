@@ -364,6 +364,11 @@ h2 {
 
 .message {
   align-self: center;
+  color: rgb(137, 136, 136);
+}
+
+.hidden {
+  display: none;
 }
 
 .close-modal {

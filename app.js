@@ -130,8 +130,10 @@ const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
 
-const modalCloseButton = document.querySelector(".close-modal");
 const overlay = document.querySelector(".overlay");
+const modalWindow = document.querySelector(".modal");
+const modalCloseButton = document.querySelector(".close-modal");
+const modalMessage = document.querySelector(".message");
 
 const currencies = new Map([
   ["USD", "United States dollar"],
@@ -277,6 +279,14 @@ let logOutTimer = function () {
   return timer;
 };
 
+// modal message
+
+let modalToggleHandler = (message = "") => {
+  modalMessage.textContent = message;
+  modalWindow.classList.toggle("hidden");
+  overlay.classList.toggle("hidden");
+};
+
 // Event Handlers
 
 // 1) LogIn
@@ -288,6 +298,15 @@ btnLogin.addEventListener("click", function (e) {
   inputLoginUsername.blur();
 
   currAcc = accounts.find(curr => curr.userName === inputLoginUsername.value);
+
+  if (!currAcc) {
+    modalToggleHandler("User doesn't exist");
+  }
+
+  if (currAcc && currAcc.pin !== +inputLoginPin.value) {
+    modalToggleHandler("Incorrect Password");
+  }
+
   if (currAcc?.pin === +inputLoginPin.value) {
     // hide the login details
 
@@ -408,5 +427,12 @@ btnLogOut.addEventListener("click", function () {
   document.body.scrollIntoView({ behavior: "smooth" });
 });
 
-updateUI(account1);
-containerApp.style.opacity = "100";
+// 7) Modal Close
+
+modalCloseButton.addEventListener("click", modalToggleHandler);
+
+overlay.addEventListener("click", modalToggleHandler);
+
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") modalToggleHandler();
+});
